@@ -11,9 +11,5 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "env": {
-    "PI_API_KEY": "@pi_api_key",
-    "PI_NETWORK": "testnet"
-  }
+  ]
 }
