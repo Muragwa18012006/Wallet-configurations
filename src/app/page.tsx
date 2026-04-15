@@ -36,7 +36,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img src="/logo.jpg" alt="Pi Logo" className="w-10 h-10 rounded-full object-cover" />
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-purple-600 flex-shrink-0">
+                              <img src="/logo.jpg" alt="Pi Logo" className="w-full h-full object-cover" />
+                            </div>
               <h1 className="text-xl font-bold text-gray-900">Pi App</h1>
             </div>
             <PiShare 
