@@ -44,6 +44,7 @@ export function PiBalance({
       const interval = setInterval(fetchBalance, refreshInterval);
       return () => clearInterval(interval);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [walletAddress, refreshInterval]);
 
   return (

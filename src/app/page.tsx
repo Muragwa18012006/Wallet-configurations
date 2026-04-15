@@ -148,7 +148,7 @@ export default function Home() {
             </p>
             <ol className="list-decimal list-inside space-y-2 mb-6">
               <li>Open this app in the Pi Browser for the best experience</li>
-              <li>Click "Sign in with Pi" to authenticate</li>
+              <li>Click &quot;Sign in with Pi&quot; to authenticate</li>
               <li>Try making a test payment</li>
               <li>Share the app with other pioneers</li>
             </ol>
