@@ -8,7 +8,12 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const address = searchParams.get('address');
 
-    const blockchain = piBlockchain();
+    const secretSeed = process.env.PI_WALLET_SECRET_SEED;
+    if (!secretSeed) {
+      throw new Error('PI_WALLET_SECRET_SEED environment variable is required');
+    }
+    const blockchain = piBlockchain(secretSeed);
+
     const balance = await blockchain.getBalance(address || undefined);
 
     return NextResponse.json({
