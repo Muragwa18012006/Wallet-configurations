@@ -1,7 +1,9 @@
+
 import { NextRequest, NextResponse } from 'next/server';
 import { piBlockchain } from '@/lib/pi-blockchain';
 
 export const dynamic = 'force-dynamic';
+export const runtime = "nodejs";
 
 export async function GET(request: NextRequest) {
   try {
@@ -10,8 +12,11 @@ export async function GET(request: NextRequest) {
 
     const secretSeed = process.env.PI_WALLET_SECRET_SEED;
     if (!secretSeed) {
-      throw new Error('PI_WALLET_SECRET_SEED environment variable is required');
-    }
+  return NextResponse.json(
+    { error: 'PI_WALLET_SECRET_SEED environment variable is required' },
+    { status: 500 }
+  );
+}
     const blockchain = piBlockchain(secretSeed);
 
     const balance = await blockchain.getBalance(address || undefined);
