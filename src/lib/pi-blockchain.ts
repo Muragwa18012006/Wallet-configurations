@@ -1,5 +1,5 @@
-import * as StellarSdk from 'stellar-sdk';
-import { Horizon } from 'stellar-sdk';
+import * as StellarSdk from '@stellar/stellar-sdk';
+import { Horizon } from '@stellar/stellar-sdk';
 
 const PI_TESTNET_SERVER = 'https://api.testnet.minepi.com';
 const PI_MAINNET_SERVER = 'https://api.mainnet.minepi.com';
