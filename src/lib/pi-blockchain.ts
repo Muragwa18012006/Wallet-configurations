@@ -14,14 +14,6 @@ export class PiBlockchainService {
 
   constructor(secretSeed?: string, network: 'testnet' | 'mainnet' = 'testnet') {
     this.secretSeed = secretSeed || '';
-    try {
-      const envSecret = (globalThis as any).process?.env?.PI_WALLET_SECRET_SEED;
-      if (envSecret) {
-        this.secretSeed = envSecret;
-      }
-    } catch {
-      // Ignore if process is not available
-    }
     
     const serverUrl = network === 'mainnet' ? PI_MAINNET_SERVER : PI_TESTNET_SERVER;
     this.server = new Horizon.Server(serverUrl);
